@@ -1,0 +1,26 @@
+<% if @order_dish.present? && @order_dish.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @order_dish.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @order_dishes.any? %>
+  <% @order_dishes.each do |order_dish| %>
+    <%= render "orders/cart_row", dish: order_dish.dish,
+      order_dish: order_dish, show_total: true %>
+  <% end %>
+<% end %>
+<% if @order_combos.any? %>
+  <% @order_combos.each do |order_combo| %>
+    <%= render "orders/cart_row_combo", combo: order_combo.combo,
+      order_combo: order_combo, show_total: true %>
+  <% end %>
+<% end %>
+<% unless @order_dishes.any? || @order_combos.any? %>
+  <p class="text-center">
+    <%= link_to t("order.empty_item"), dishes_path%>
+  </p>
+<% end %>

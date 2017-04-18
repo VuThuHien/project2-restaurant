@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<%= search_form_for [:admin, @search], remote: true, method: :get do |f| %>
+  <div class="input-group input-group-lg col-sm-12">
+    <div class="col-sm-2 add">
+      <%= link_to "+ Add category", new_admin_category_path,
+                  class: "btn btn-primary" %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.text_field :name_or_description_cont, class: "pj-form-field w180",
+        placeholder: t(".input_keyword"), id: "searchinput" %>
+      <span id="searchclear" class="form-control-clear glyphicon
+        glyphicon-remove form-control-feedback">
+      </span>
+      <%= f.submit  t(".search"), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="apple-pagination">
+    <%= paginate @categories, remote: true %>
+  </div>
+  <ul class="sortable-list">
+    <li>
+      <div class="order-holder">
+        <b><%= sort_link @search, :id, t(".order"), {}, {remote: true, method: :get} %></b>
+      </div>
+      <div class="name-holder">
+        <b><%= sort_link @search, :name, {}, {remote: true, method: :get} %></b>
+      </div>
+      <div class="option-holder"><b><%= t ".opition" %></b></div>
+    </li>
+    <% if @categories.any? %>
+      <% @categories.each do |category| %>
+        <li>
+          <div class="order-holder">
+            <%= category.id %>
+          </div>
+          <div class="title-holder">
+            <%= link_to category.name, admin_category_path(category) %>
+          </div>
+          <div class="edit-holder">
+            <%= link_to edit_admin_category_path(category) do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <div class="delete-holder">
+            <%= link_to admin_category_path(category),
+              method: :delete, data: {confirm: t("button.delete_warning")} do %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    <% else %>
+      <%= t "admin.categories.index.search_fail" %>
+    <% end %>
+  </ul>
+<% end %>
+<style>
+  i {
+    font-size: 20px !important;
+  }
+  .w180 {
+    margin-left: 10px;
+    width: 80%;
+  }
+  .add a {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: -15px;
+  }
+  .form-control-feedback {
+    margin-right: 18%;
+    opacity: 0.3;
+  }
+</style>

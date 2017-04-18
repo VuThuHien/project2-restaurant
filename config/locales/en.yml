@@ -1,0 +1,382 @@
+en:
+  hello: "Hello world"
+  res: Restaurant
+  brand: Awesomecity
+  home:
+    home: Home
+    menu: Menu
+    combo: Combo
+    book: Booking
+    contact: Check order
+    admin: Admin Only
+  footer:
+    about: About the house
+    about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+     sed diam nonummy nibh euismod tincidunt ut laoreet.
+      Dolore magna aliquam erat volutpat ipsum.
+    contact: Contact Detail
+    contact_content1: 123 Delicious Street, San Francisco, CA 10110
+    contact_content2: 010-020-0780
+    contact_content3: hello@company.com
+    open: Opening Hours
+    open_content1: Monday - Firday
+    open_content2: 11:00 AM - 10:00 PM
+    open_content3: Saturday - Sunday
+    open_content4: 10:00 AM - 09:00 PM
+  form:
+    login: This form contain %{count}
+    error: error
+    errors: errors
+    _error: This form contain
+    button: Login
+    lost_pass: Lost your password?
+  flash:
+    dish:
+      find_fail: Dish not found.
+      create_success: Created dish successfullly!
+      update_success: Updated dish successfully!
+      destroy_success: Deleted dish successfully!
+      destroy_fail: Failed. Something's wrong.
+    combo:
+      find_fail: Dish not found.
+      find_fail: Dish not found.
+      combo_fails: Combo not found.
+      create_success: Created combo successfullly!
+      update_success: Updated combo successfully!
+      destroy_success: Deleted combo successfully!
+      destroy_fail: Failed. Something's wrong.
+    category:
+      find_fail: Category not found.
+      create_success: Created category successfully!
+      update_success: Updated category successfully!
+      delete_success: Deleted category successfully!
+      delete_fail: Failed. Something's wrong.
+    order:
+      find_fail: Order not found.
+      create_success: Created order successfully!
+      update_success: Updated order successfully!
+      delete_success: Deleted order successfully!
+      delete_fail: Failed. Something's wrong.
+  admin:
+    combo: Combo
+    menu: Menu
+    category: Category
+    dish: Dish
+    order: Check Order
+    bill: Export bill
+    profile: Profile
+    setting: Setting
+    logout: Log out
+    login: Login
+    login2: (only for Admin)
+    error_log: Please log in
+    error_wrongpass: Wrong password or email
+    email: Input email
+    pass: Input password
+    admin: Admin
+    not_exist: This account is not exist.
+    success: Success update info
+    fail: Failed update info
+    edit: Edit profile
+    name: Input name
+    newpass: Input new password
+    newpass2: Re-input new password
+    oldpass: Confirm password to update
+    update: Update profile
+    change_pass: Change Password
+    search: Search
+    dishes:
+      index:
+        title: Dishes manager
+        name: Dish
+        add_dish_button: Creat new dish
+        search_fail: Not found.
+      new:
+        title: Create dish
+      edit:
+        title: Edit dish
+      show:
+        title: Dish information
+        name: "Name:"
+        price: "Price:"
+        money: $
+        image: "Image:"
+        description: "Description:"
+        order: "Sort order:"
+        active: "Active:"
+        yes: Yes
+        no: No
+        edit_dish: Edit dish
+      form:
+        name: "Dish name:"
+        price: "Price:"
+        description: Description
+        image: Image link
+        active: Active
+        yes: Yes
+        no: No
+      dish:
+        search: Search
+        input_keyword: Search for dish name or description
+        price: Price
+        status: Active
+        order: No.
+        all: All
+        yes: Available
+        no: Unavailable
+        opition: Opition
+        money: $
+        yes: Yes
+        no: No
+        view_dish_button: View
+        add_dish_button: Add
+        edit_dish_button: Edit
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
+    combos:
+      index:
+        title: Combos manager
+        add_combo_button: Add Combo
+      new:
+        title: Create combo
+        name: "Combo name:"
+        description: "Description:"
+      show:
+        title: Combo information
+        category: Category
+        no: No.
+        opition: Opition
+        dish: Dish name
+        name: Combo
+        dishes: LIST DISHES
+        description: Description
+        edit_combo_button: Edit combo
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
+      edit:
+        title: Edit combo
+        delete_combo_button: Delete this combo
+      form:
+        create_combo_button: Create combo
+        update_combo_button: Update combo
+        name: "Combo name:"
+        description: "Description:"
+        dishes: "Choose dishes:"
+      combo:
+        search: Search
+        input_keyword: Search for combo name or description
+        name: Name
+        order: No.
+        discount: Discount
+        view_combo_button: Details
+        edit_combo_button: Edit
+        delete_combo_button: Delete
+        delete_warning: Are you sure?
+        dishes: View dishes
+    categories:
+      index:
+        title: Categories manager
+        add_button: Add new category
+        search_fail: Not found
+      form:
+        name: "Category name:"
+        description: "Description:"
+      show:
+        dish: Dish name
+        opition: Opition
+        add_dish_button: Add dish
+        empty: This category hasn't any dish.
+        title: Category information
+        name: Category
+        opition: Opition
+        category: Category
+        description: Description
+        dishes: LIST DISHES
+        no: "No."
+        edit_category_button: Edit category
+      edit:
+        title: Edit category
+      new:
+        title: Create category
+      category:
+        order: No.
+        name: Category
+        opition: Opition
+        search: Search
+        input_keyword: Search for category name or description
+        view_button: Details
+        edit_button: Edit
+        delete_button: Delete
+        delete_warning: Are you sure?
+    orders:
+      index:
+        title: Orders manager
+        add_order_button: Add new order
+      show:
+        title: Order details
+      new:
+        title: Create order
+      edit:
+        title: Edit order
+      form:
+        code: Order code
+        discount: Discount
+        guest_name: Guest name
+        capacity: Capacity
+        date: Date
+        time_in: From
+        time_out: To
+        status: "Status:"
+        approved: Approved
+        canceled: Pending
+      order:
+        search: Search
+        input_keyword: Search for order code or guest name
+        choose: "--- Choose ---"
+        date: "Date:"
+        check: "Status:"
+        code: Code
+        discount: Discount
+        table: Table
+        capacity: Persons
+        guest_name: Guest name
+        phone: Phone
+        date: Date
+        from: From
+        to: To
+        status: Status
+        all: All
+        approved: Approved
+        canceled: Pending
+        no_table: Not order
+        action: Action
+  button:
+    view: Details
+    add: Add
+    update: Update
+    edit: Edit
+    delete: Delete
+    cancel: Back
+    clear: Clear form
+    all_dish: View all dishes
+    delete_warning: Are you sure?
+  dishes:
+    index:
+      title: OUR MENU
+      slogan: Now That Your Tastes Have Grown Up!
+      money: $
+      not_found: Sorry, dish not found
+    show:
+      title: Dish information
+      field: Field
+      value: Value
+      name: Dish
+      price: Price
+      money: $
+      image: Image
+      description: Description
+      order: "Sort order:"
+      active: "Active:"
+      yes: Yes
+      no: No
+      available: Available
+      cart: Add to Cart
+      buy: Book Now
+      notavai: See you soon
+      social: Awesomecity
+      add_to_cart: Add to card
+    dish:
+      money: $
+      submit: Add to cart
+      view: View detail
+      search: Search
+      input_keyword: Search for dish name or description
+      order: No.
+      available: Available
+      unavailable: Unavailable
+      all: All
+      sort: "Sort by:"
+      check: "Check available:"
+  combos:
+    index:
+      viewdes: View Detail
+      continue: ... (continued)
+      from: "Only from"
+      to: "to "
+    show:
+      readmore: Read more
+      viewimage: Image
+      include: "Combo includes:"
+      condition: "Terms & conditions:"
+      discount: "Discount "
+      bill: " for total bill."
+      valid: Valid from
+      to: "to "
+    combo:
+      money: $
+      view: View detail
+      search: Search
+      input_keyword: Search for combo name or description
+      order: No.
+      available: Available
+      unavailable: Unavailable
+      all: All
+      sort: "Sort by:"
+      check: "Check available:"
+      readmore: Read More
+      off: " off"
+      deal: View Deal
+      continue: ... (continued)
+      valid_from: " Valid from"
+      valid_to: " to"
+    showmore: Show more
+    showless: Show less
+  order:
+    empty_item: "There are no items in your shopping cart.  Please go menu and add some items to your cart."
+    delete: Delete
+    delete_alert: ! "Are you sure you wish to delete the product %{product_name} from your cart?"
+    unit_price: "Unit price  :"
+    update_quantity: Update Quantity
+    total_price: "Total price :"
+    quantity: "Quantity:"
+    cart_text: "%{cart_size} items in your order ( %{total_price}$ )"
+    not_valid_or_not_active: "is not valid or is not active."
+    not_valid_value: "is not a valid order."
+    not_valid: "not valid."
+  helpers:
+    submit:
+      dish:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      combo:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      category:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      order:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+  select:
+    em: Early Morning (08:00 - 10:00)
+    lm: Later Morning (10:00 - 12:00)
+    ea: Early Afternoon (13:00 - 15:00)
+    la: Later Afternoon (15:00 - 17:00)
+    ee: Early Evening (17:30 - 19:30)
+    le: Later Evening (20:00 - 22:00)
+    ta: Not important
+    tm: Middle of room
+    ts: Side of room
+    to: Outside
+  reserve:
+    quantity: Please choose capacity
+    table: Please select prefer table
+    date: Choose date
+    time: Please choose your time
+    submit: Finish Booking Table
+    find: Find Table
+    table: Please choose table

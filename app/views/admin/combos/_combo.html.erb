@@ -1,0 +1,86 @@
+<%= search_form_for [:admin, @search], remote: true, method: :get do |f| %>
+  <div class="input-group input-group-lg col-sm-12">
+    <div class="col-sm-2 add">
+      <%= link_to "+ Add combo", new_admin_combo_path,
+                class: "btn btn-primary" %>
+    </div>
+    <div class="col-sm-10">
+      <%= f.text_field :name_or_description_cont, class: "pj-form-field w180",
+        placeholder: t(".input_keyword"), id: "searchinput" %>
+      <span id="searchclear" class="form-control-clear glyphicon
+        glyphicon-remove form-control-feedback">
+      </span>
+      <%= f.submit  t(".search"), class: "btn btn-info" %>
+    </div>
+  </div>
+  <div class="apple-pagination">
+    <%= paginate @combos, remote: true %>
+  </div>
+  <table class="default-dg-table">
+    <tbody>
+      <tr class="dg_tr" style="" id="di_row_">
+        <th class="default_dg_th dg-left dg-nowrap dg1">
+          <%= sort_link @search, :id, t(".order"), {}, {remote: true, method: :get} %>
+        </th>
+        <th class="default_dg_th dg-center dg-nowrap dg2" colspan="2">
+          <%= sort_link @search, :name, t(".name"), {}, {remote: true, method: :get} %>
+        </th>
+        <th class="default_dg_th dg-center dg-nowrap dg3">
+          <%= sort_link @search, :discount, t(".discount"), {}, {remote: true, method: :get} %>
+        </th>
+        <th class="default_dg_th dg-center dg-nowrap dg4" colspan="2">
+          <%= t "Opition" %>
+        </th>
+      </tr>
+        <% if @combos.any? %>
+          <% @combos.each do |combo| %>
+            <tr class="dg_tr" id="di_row_0">
+              <td class="default_dg_td dg-left dg-nowrap dg1"><%= combo.id %></td>
+              <td class="default_dg_td dg-left dg-nowrap img">
+                <%= image_tag combo.image,
+                  onerror: "this.src='https://t4.ftcdn.net/jpg/01/07/86/19/500_F_107861953_YZ800J1eDVtaEVAMXj1KRpez6efJpm7D.jpg';" %>
+              </td>
+              <td class="default_dg_td dg-left dg-nowrap dg2">
+                <%= link_to combo.name, admin_combo_path(combo) %>
+              </td>
+              <td class="default_dg_td dg-center dg-nowrap dg3">
+                <%= combo.discount %>%
+              </td>
+              <td class="default_dg_td dg-right dg-nowrap">
+                <%= link_to edit_admin_combo_path(combo) do %>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <% end %>
+              </td>
+              <td class="default_dg_td dg-left dg-nowrap img">
+                <%= link_to admin_combo_path(combo), method: :delete, data: {confirm: t("button.delete_warning")} do %>
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+    </tbody>
+  </table>
+  <br>
+<% end %>
+<style>
+  tr a {
+    font-size: 18px !important;
+  }
+  .w180 {
+    margin-left: 10px;
+    width: 80%;
+  }
+  .add a {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: -15px;
+  }
+  .form-control-feedback {
+    margin-right: 18%;
+    opacity: 0.3;
+  }
+  tr {
+    line-height: 22px;
+  }
+</style>

@@ -1,0 +1,23 @@
+<ul class="nav navbar-nav navbar-right animated fadeInDown wow" data-wow-delay="0.1s">
+  <li><%= link_to t("admin.combo"), admin_combos_path, class: "smoothScroll animated fadeInLeft wow",
+    "data-wow-delay": "0.1s", method: :get %></li>
+  <li><%= link_to t("admin.category"), admin_categories_path, class: "smoothScroll animated fadeInLeft wow",
+    "data-wow-delay": "0.15s", method: :get %></li>
+  <li><%= link_to t("admin.dish"), admin_dishes_path, class: "smoothScroll animated fadeInLeft wow",
+    "data-wow-delay": "0.2s", method: :get %></li>
+  <li><%= link_to t("admin.order"), admin_orders_path, class: "smoothScroll animated fadeInLeft wow",
+    "data-wow-delay": "0.25s", method: :get %></li>
+  <li><%= link_to t("admin.bill"), "#bill", class: "smoothScroll animated fadeInLeft wow",
+    "data-wow-delay": "0.3s", method: :get %></li>
+  <li class="dpdwn">
+    <%= link_to t("admin.profile"), admin_path,
+      class: "smoothScroll animated fadeInLeft wow",
+      "data-wow-delay": "0.3s", method: :get %>
+    <ul class="nav">
+      <li><%= link_to t("admin.setting"), edit_admin_path, class: "smoothScroll animated fadeIn wow",
+        "data-wow-delay": "0.3s", method: :get %></li>
+      <li><%= link_to t("admin.logout"), logout_path, class: "smoothScroll animated fadeIn wow",
+        "data-wow-delay": "0.35s", method: :delete %></li>
+      </ul>
+  </li>
+</ul>

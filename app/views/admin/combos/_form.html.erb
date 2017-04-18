@@ -1,0 +1,40 @@
+<%= form_for [:admin, @combo] do |f| %>
+  <%= f.label :name, t(".name"), class:"form-label" %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :description, t(".description"), class:"form-label" %>
+  <%= f.text_area :description, class: "form-control" %>
+
+  <%= f.label :discount, "Discount", class:"form-label" %>
+  <%= f.number_field :discount, class: "form-control", min: 0 %>
+
+  <%= f.label :image, "Image", class:"form-label" %>
+  <%= f.text_area :image, class: "form-control" %>
+
+  <%= f.label :dishes, t(".dishes"), class:"form-label" %>
+  <div class="col-xs-12">
+    <% Dish.all.each do |dish| %>
+      <div class="col-xs-6 col-sm-4 choose">
+        <%= check_box_tag "combo[dish_ids][]", dish.id, @combo.dishes.include?(dish) %>
+        <%= label_tag :dish_ids, dish.name %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-xs-12 text-center">
+    <% if @combo.new_record? %>
+        <%= f.submit class: "btn btn-primary" %>
+        <%= f.submit t("button.clear"), type: :reset,
+                     class: "btn btn-danger" %>
+    <% else %>
+        <%= f.submit class: "btn btn-success" %>
+        <%= f.submit t("button.clear"), type: :reset,
+                     class: "btn btn-danger" %>
+    <% end %>
+  </div>
+<% end %>
+<style>
+  .form-label {
+    color: black !important;
+    font-size: 20px !important;
+  }
+</style>
